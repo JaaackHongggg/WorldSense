@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> WorldSense </title>
+
+  <link rel="icon" href="static/images/worldsense.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="stylesheet" href="./static/css/video-player.css">
+
+  <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+
+  <style>
+    .no-sort {
+      cursor: default;
+      pointer-events: none;
+      background-image: none !important;
+      /* Remove the sort arrow */
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models">
+              <b>WorldSense</b>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-bold">
+              <img src="static/images/worldsense.png" style="width:1.6em;vertical-align: middle" alt="Logo" />
+              <span class="worldsense" style="vertical-align: middle">WorldSense</span>
+            </h1>
+            <h2 class="subtitle is-3 publication-subtitle" , style="margin-bottom: 20px;">
+              Evaluating Real-world Omnimodal Understanding <br> for Multimodal LLMs
+            </h2>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Jack Hong<sup>1</sup>,</span>
+              <span class="author-block">
+                Shilin Yan<sup>1</sup>,</span>
+              <span class="author-block">
+                Jiayin Cai<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Xiaolong Jiang<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Yao Hu<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://weidixie.github.io/">Weidi Xie</a><sup>2</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Xiaohongshu Inc.</span>
+              <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University</span>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/open-compass/VLMEvalKit/tree/main" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <p style="font-size:18px">🔍</p>
+                    </span>
+                    <span>Eval Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/honglyhly/WorldSense"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🤗</p>
+                      <!-- 🔗 -->
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+                <!-- Leaderboard Link. -->
+                <span class="link-block">
+                  <a href="https://mathvista.github.io/#leaderboard"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                    </span>
+                    <span>Leaderboard</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Introduction -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Introduction</h2>
+          <img src="static/images/sample.png" alt="data-sample" style="max-width: 100%;" />
+          <div class="content has-text-justified">
+            We introduce <b>WorldSense</b>, the <i>first</i> benchmark to assess the multi-modal video understanding, that 
+            simultaneously encompasses <i>visual, audio, and text</i> inputs. 
+            In contrast to existing benchmarks, our <b>WorldSense</b> has several features: (i) <b>collaboration of omni-modality</b>, 
+            we design the evaluation tasks to feature a strong coupling of audio and video, requiring models 
+            to effectively utilize the synergistic perception of omni-modality; 
+            (ii) <b>diversity of videos and tasks</b>, WorldSense encompasses a diverse collection of 1,662 
+            audio-visual synchronised videos, systematically categorized into 8 primary domains and 67 fine-grained 
+            subcategories to cover the broad scenarios, and 3,172 multi-choice QA pairs across 26 distinct tasks to 
+            enable the comprehensive evaluation; (iii) <b>high-quality annotations</b>, all the QA pairs are manually 
+            labeled by 80 expert annotators with multiple rounds of correction to ensure quality. 
+            Based on our <b>WorldSense</b>, we extensively evaluate various state-of-the-art models. 
+            The experimental results indicate that existing models face significant challenges in understanding 
+            real-world scenarios ($48.0\%$ best accuracy). We hope our <b>WorldSense</b> can provide a platform for 
+            evaluating the ability in constructing and understanding coherent contexts from omni-modality.
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      updateRowNumbers();
+      document.querySelector("#results").addEventListener("click", updateRowNumbers);
+    });
+
+    function updateRowNumbers() {
+      const rows = document.querySelectorAll("#results tbody tr");
+      rows.forEach((row, index) => {
+        row.querySelector("td").innerText = index + 1;
+      });
+    }
+  </script>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="columns is-centered">
+        <div class="column is-full has-text-centered content">
+
+          <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+          <div class="content">
+            <p class="mt-3">Overall performance on WorldSense. Existing agents demonstrate significant limitations on
+              real-world omnimodal understanding.
+            </p>
+
+            <table class="js-sort-table" id="results" style="margin-left: auto; margin-right: auto;">
+              <thead>
+                <tr>
+                  <!-- <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px;"
+                    data-js-sort-colNum="none"><strong>#</strong></th>
+                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 180px;"
+                    data-js-sort-colNum="none"><strong>Model</strong></th>
+                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px;"
+                    data-js-sort-colNum="none"><strong>LLM <br>Params</strong></th>
+                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 100px;"
+                    data-js-sort-colNum="none"><strong>Frames</strong></th>
+                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 110px;"
+                    data-js-sort-colNum="none"><strong>Date</strong></th>
+                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="6"><strong>Overall
+                      (%)</strong></th>
+                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="8"><strong>Short
+                      Video (%)</strong></th>
+                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="10"><strong>Medium
+                      Video (%)</strong></th>
+                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="12"><strong>Long
+                      Video (%)</strong></th>
+                </tr>
+                <tr>
+                  <th data-js-sort-colNum="5"><strong>w/o subs</strong></th>
+                  <th data-js-sort-colNum="6"><strong>w subs</strong></th>
+                  <th data-js-sort-colNum="7"><strong>w/o subs</strong></th>
+                  <th data-js-sort-colNum="8"><strong>w subs</strong></th>
+                  <th data-js-sort-colNum="9"><strong>w/o subs</strong></th>
+                  <th data-js-sort-colNum="10"><strong>w subs</strong></th>
+                  <th data-js-sort-colNum="11"><strong>w/o subs</strong></th>
+                  <th data-js-sort-colNum="12"><strong>w subs</strong></th> -->
+
+                  <th class="js-sort-string"><strong>#</strong></th>
+                  <th class="js-sort-string"><strong>Model</strong></th>
+                  <th class="js-sort-string"><strong>LLM Size</strong></th>
+                  <th class="js-sort-string"><strong>Modality</strong></th>
+                  <th class="js-sort-number"><strong>Tech & Science</strong></th>
+                  <th class="js-sort-number"><strong>Culture & Politics</strong></th>
+                  <th class="js-sort-number"><strong>Daily Life</strong></th>
+                  <th class="js-sort-number"><strong>Film & TV</strong></th>
+                  <th class="js-sort-number"><strong>Performance</strong></th>
+                  <th class="js-sort-number"><strong>Games</strong></th>
+                  <th class="js-sort-number"><strong>Sports</strong></th>
+                  <th class="js-sort-number"><strong>Music</strong></th>
+                  <th class="js-sort-number"><strong>Average</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;">
+                    <b class="">
+                      <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf"
+                        class="ext-link" style="font-size: 16px; margin-left: 5px;">Gemini 1.5 Pro</a>
+                      <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
+                    </b>
+                  </td>
+                  <td style="vertical-align: middle;">- </td>
+                  <td style="vertical-align: middle;">A+V</td>
+                  <td style="vertical-align: middle;">53.7</td>
+                  <td style="vertical-align: middle;">47.2</td>
+                  <td style="vertical-align: middle;">50.3</td>
+                  <td style="vertical-align: middle;">50.4</td>
+                  <td style="vertical-align: middle;">52.4</td>
+                  <td style="vertical-align: middle;">46.8</td>
+                  <td style="vertical-align: middle;">40.2</td>
+                  <td style="vertical-align: middle;">42.0</td>
+                  <td style="vertical-align: middle;"><b class="">48.0</b< /td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://openai.com/index/hello-gpt-4o/" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">GPT-4o
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">- </td>
+                  <td style="vertical-align: middle;">V</td>
+                  <td style="vertical-align: middle;">48.0</td>
+                  <td style="vertical-align: middle;">44.0</td>
+                  <td style="vertical-align: middle;">38.3</td>
+                  <td style="vertical-align: middle;">43.5</td>
+                  <td style="vertical-align: middle;">41.9</td>
+                  <td style="vertical-align: middle;">41.2</td>
+                  <td style="vertical-align: middle;">42.6</td>
+                  <td style="vertical-align: middle;">42.7</td>
+                  <td style="vertical-align: middle;"><b class="">42.6</b></td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://huggingface.co/lmms-lab/LLaVA-NeXT-Video-72B-Qwen2" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">LLaVA-Video
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">Bytedance & NTU S-Lab</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">7B</td>
+                  <td style="vertical-align: middle;">V</td>
+                  <td style="vertical-align: middle;">41.6</td>
+                  <td style="vertical-align: middle;">38.6</td>
+                  <td style="vertical-align: middle;">40.6</td>
+                  <td style="vertical-align: middle;">42.1</td>
+                  <td style="vertical-align: middle;">40.4</td>
+                  <td style="vertical-align: middle;">39.7</td>
+                  <td style="vertical-align: middle;">37.0</td>
+                  <td style="vertical-align: middle;">40.9</td>
+                  <td style="vertical-align: middle;"><b class="">40.2</b></td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;">
+                    <b class="">
+                      <a href="https://internvl.github.io/blog/2024-12-05-InternVL-2.5/" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">InternVL2.5</a>
+                      <p style="font-size: 12px; margin-left: 5px; color: #858383;">Shanghai AI Lab</p>
+                    </b>
+                  </td>
+                  <td style="vertical-align: middle;">8B</td>
+                  <td style="vertical-align: middle;">V</td>
+                  <td style="vertical-align: middle;">43.7</td>
+                  <td style="vertical-align: middle;">40.9</td>
+                  <td style="vertical-align: middle;">34.6</td>
+                  <td style="vertical-align: middle;">39.7</td>
+                  <td style="vertical-align: middle;">37.8</td>
+                  <td style="vertical-align: middle;">36.2</td>
+                  <td style="vertical-align: middle;">39.4</td>
+                  <td style="vertical-align: middle;">41.1</td>
+                  <td style="vertical-align: middle;"><b class="">39.1</b></td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;">
+                    <b class="">
+                      <a href="https://arxiv.org/pdf/2408.03326" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">LLaVA-OneVision</a>
+                      <p style="font-size: 12px; margin-left: 5px; color: #858383;">Bytedance & NTU S-Lab</p>
+                    </b>
+                  </td>
+                  <td style="vertical-align: middle;">7B</td>
+                  <td style="vertical-align: middle;">V</td>
+                  <td style="vertical-align: middle;">38.9</td>
+                  <td style="vertical-align: middle;">38.9</td>
+                  <td style="vertical-align: middle;">36.3</td>
+                  <td style="vertical-align: middle;">37.6</td>
+                  <td style="vertical-align: middle;">37.8</td>
+                  <td style="vertical-align: middle;">37.9</td>
+                  <td style="vertical-align: middle;">36.3</td>
+                  <td style="vertical-align: middle;">39.1</td>
+                  <td style="vertical-align: middle;"><b class="">37.7</b></td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://www.anthropic.com/news/claude-3-5-sonnet" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">Claude 3.5 Sonnet
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">Anthropic</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">-</td>
+                  <td style="vertical-align: middle;">V</td>
+                  <td style="vertical-align: middle;">43.7</td>
+                  <td style="vertical-align: middle;">31.7</td>
+                  <td style="vertical-align: middle;">30.6</td>
+                  <td style="vertical-align: middle;">36.5</td>
+                  <td style="vertical-align: middle;">30.7</td>
+                  <td style="vertical-align: middle;">31.9</td>
+                  <td style="vertical-align: middle;">36.6</td>
+                  <td style="vertical-align: middle;">33.9</td>
+                  <td style="vertical-align: middle;"><b class="">34.8</b></td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://github.com/X-PLUG/mPLUG-Owl/tree/main/mPLUG-Owl3" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">mPLUG-Owl3
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">7B</td>
+                  <td style="vertical-align: middle;">V</td>
+                  <td style="vertical-align: middle;">37.5</td>
+                  <td style="vertical-align: middle;">31.4</td>
+                  <td style="vertical-align: middle;">31.0</td>
+                  <td style="vertical-align: middle;">34.1</td>
+                  <td style="vertical-align: middle;">33.3</td>
+                  <td style="vertical-align: middle;">33.2</td>
+                  <td style="vertical-align: middle;">32.1</td>
+                  <td style="vertical-align: middle;">30.5</td>
+                  <td style="vertical-align: middle;"><b class="">32.9</b></td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://github.com/QwenLM/Qwen2-VL" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">Qwen2-VL
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">7B </td>
+                  <td style="vertical-align: middle;">V</td>
+                  <td style="vertical-align: middle;">33.5</td>
+                  <td style="vertical-align: middle;">29.0</td>
+                  <td style="vertical-align: middle;">28.4</td>
+                  <td style="vertical-align: middle;">33.6</td>
+                  <td style="vertical-align: middle;">30.3</td>
+                  <td style="vertical-align: middle;">32.3</td>
+                  <td style="vertical-align: middle;">34.7</td>
+                  <td style="vertical-align: middle;">38.5</td>
+                  <td style="vertical-align: middle;"><b class="">32.4</b></td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/"
+                        class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaMA3.2
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">Meta</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">7B</td>
+                  <td style="vertical-align: middle;">V</td>
+                  <td style="vertical-align: middle;">27.5</td>
+                  <td style="vertical-align: middle;">25.7</td>
+                  <td style="vertical-align: middle;">28.9</td>
+                  <td style="vertical-align: middle;">25.9</td>
+                  <td style="vertical-align: middle;">27.7</td>
+                  <td style="vertical-align: middle;">21.1</td>
+                  <td style="vertical-align: middle;">29.0</td>
+                  <td style="vertical-align: middle;">26.8</td>
+                  <td style="vertical-align: middle;"><b class="">27.1</b></td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://unified-io-2.allenai.org/" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">Unified-IO-2 XXL
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">AllenAI</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">7B</td>
+                  <td style="vertical-align: middle;">A+V</td>
+                  <td style="vertical-align: middle;">27.1</td>
+                  <td style="vertical-align: middle;">31.7</td>
+                  <td style="vertical-align: middle;">23.9</td>
+                  <td style="vertical-align: middle;">23.7</td>
+                  <td style="vertical-align: middle;">25.5</td>
+                  <td style="vertical-align: middle;">23.7</td>
+                  <td style="vertical-align: middle;">25.7</td>
+                  <td style="vertical-align: middle;">27.3</td>
+                  <td style="vertical-align: middle;"><b class="">25.9</b></td>
+                </tr>
+
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://github.com/DAMO-NLP-SG/VideoLLaMA2" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">VideoLLaMA 2
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">7B</td>
+                  <td style="vertical-align: middle;">A+V</td>
+                  <td style="vertical-align: middle;">29.4</td>
+                  <td style="vertical-align: middle;">25.4</td>
+                  <td style="vertical-align: middle;">21.8</td>
+                  <td style="vertical-align: middle;">24.5</td>
+                  <td style="vertical-align: middle;">26.2</td>
+                  <td style="vertical-align: middle;">24.6</td>
+                  <td style="vertical-align: middle;">25.5</td>
+                  <td style="vertical-align: middle;">27.1</td>
+                  <td style="vertical-align: middle;"><b class="">25.4</b></td>
+                </tr>
+
+
+
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://unified-io-2.allenai.org/" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">Unified-IO-2 XL
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">AllenAI</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">3B</td>
+                  <td style="vertical-align: middle;">A+V</td>
+                  <td style="vertical-align: middle;">26.5</td>
+                  <td style="vertical-align: middle;">24.4</td>
+                  <td style="vertical-align: middle;">22.5</td>
+                  <td style="vertical-align: middle;">23.5</td>
+                  <td style="vertical-align: middle;">24.7</td>
+                  <td style="vertical-align: middle;">28.0</td>
+                  <td style="vertical-align: middle;">25.7</td>
+                  <td style="vertical-align: middle;">24.2</td>
+                  <td style="vertical-align: middle;"><b class="">24.7</b></td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://unified-io-2.allenai.org/" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">Unified-IO-2 L
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">AllenAI</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">1B</td>
+                  <td style="vertical-align: middle;">A+V</td>
+                  <td style="vertical-align: middle;">19.3</td>
+                  <td style="vertical-align: middle;">22.8</td>
+                  <td style="vertical-align: middle;">23.1</td>
+                  <td style="vertical-align: middle;">25.6</td>
+                  <td style="vertical-align: middle;">25.8</td>
+                  <td style="vertical-align: middle;">24.1</td>
+                  <td style="vertical-align: middle;">22.9</td>
+                  <td style="vertical-align: middle;">25.3</td>
+                  <td style="vertical-align: middle;"><b class="">23.3</b></td>
+                </tr>
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a href="https://onellm.csuhan.com/"
+                        class="ext-link" style="font-size: 16px; margin-left: 5px;">OneLLM
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">CUHK & Shanghai AI Lab</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">7B</td>
+                  <td style="vertical-align: middle;">A+V</td>
+                  <td style="vertical-align: middle;">26.7</td>
+                  <td style="vertical-align: middle;">25.1</td>
+                  <td style="vertical-align: middle;">19.0</td>
+                  <td style="vertical-align: middle;">22.7</td>
+                  <td style="vertical-align: middle;">27.0</td>
+                  <td style="vertical-align: middle;">23.7</td>
+                  <td style="vertical-align: middle;">22.4</td>
+                  <td style="vertical-align: middle;">19.8</td>
+                  <td style="vertical-align: middle;"><b class="">22.8</b></td>
+                </tr>
+
+
+
+                <tr>
+                  <td style="vertical-align: middle;"></td>
+                  <td style="text-align: left; padding: 2px 10px;"><b class=""><a
+                        href="https://github.com/PKU-YuanGroup/Video-LLaVA" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">Video-LLaVA
+                        <p style="font-size: 12px; margin-left: 5px; color: #858383;">PKU</p>
+                      </a></b></td>
+                  <td style="vertical-align: middle;">7B</td>
+                  <td style="vertical-align: middle;">V</td>
+                  <td style="vertical-align: middle;">23.6</td>
+                  <td style="vertical-align: middle;">20.8</td>
+                  <td style="vertical-align: middle;">19.1</td>
+                  <td style="vertical-align: middle;">17.3</td>
+                  <td style="vertical-align: middle;">23.6</td>
+                  <td style="vertical-align: middle;">17.2</td>
+                  <td style="vertical-align: middle;">20.8</td>
+                  <td style="vertical-align: middle;">20.1</td>
+                  <td style="vertical-align: middle;"><b class="">20.3</b></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DATASET SECTION -->
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mathvista_other">
+        <span class="mathvista_other" style="vertical-align: middle">WorldSense</span>
+      </h1>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths" style="width: 100%;">
+          <h2 class="title is-3">Overview </h2>
+          <div class="content has-text-justified">
+            <p style="text-align: center; margin-bottom: -5px;" , class="mt-3">Our WorldSense have the following three main features:
+            </p>
+            <p style="text-align: center; margin-bottom: 30px; font-weight: bold;" , class="mt-3">
+              (1) Collaboration of Omni-Modality, (2) Diversity of Videos and Tasks, (3) High-Quality Annotations.
+            </p>
+
+            <!-- <div id="results-carousel" class="carousel results-carousel"> -->
+            <!-- </div> -->
+
+            <div class="content has-text-centered">
+
+              <img src="static/images/distribution.png" style="width: 70%;" />
+              <p style="margin-bottom: 30px;">Distribution of WorldSense.
+              </p>
+              <p>(a) Video category hierarchy. (b) Task distribution. (c) Acoustic signals distribution. (d) Video duration distribution. </p>
+
+            </div>
+
+            <!-- <div class="content has-text-centered">
+              <img src="static/images/static.png" style="width: 70%;" />
+              <p style="margin-bottom: 30px;">sss
+              </p>
+            </div> -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths" style="width: 100%;">
+        <h2 class="title is-3" style="margin-top: 30px;">Benchmark Curation</h2>
+
+        <div class="content has-text-centered">
+
+          <img src="static/images/curation.png" style="width: 60%;" />
+          <p style="margin-bottom: 0px;">Data collection and QA annotation pipelines.</p>
+          <p style="margin-bottom: 30px;">
+            (a) Data collection and curation process. (b) QA annotation and quality control pipeline.
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths" style="width: 100%;">
+        <h2 class="title is-3" style="margin-top: 30px;">Benchmark Static</h2>
+
+        <div class="content has-text-centered">
+          <img src="static/images/static.png" style="width: 60%;" />
+          <p style="margin-bottom: 0px;">Static comparison with other benchmarks.</p>
+          
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RESULTS SECTION -->
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mathvista_other">Experiment Results</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- <div class="columns is-centered m-6"> -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths" style="width: 70%;">
+          <h2 class="title is-3">Overall Performance</h2>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/experiments/overall_performance.png" alt="overall_performance" width="100%" />
+              <p>Overall performance on our WorldSense.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths" style="width: 70%;">
+          <h2 class="title is-3">Fine-grained Results</h2>
+          <div class="box m-5">
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="content has-text-centered">
+                <img src="static/images/experiments/fine_task.png" alt="" width="90%" />
+                <p style="margin-bottom: 30px;">
+                  Fine-grained results on task category.</p>
+              </div>
+
+              <div class="content has-text-centered">
+                <img src="static/images/experiments/fine_audio.png" alt="" width="85%" />
+                <p style="margin-bottom: 30px;">
+                  Fine-grained results on audio type.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths" style="width: 70%;">
+          <h2 class="title is-3">In-depth Analysis</h2>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/experiments/ablation_vision.png" alt="overall_performance" width="100%" />
+              <p>Impact of vision information.</p>
+            </div>
+            <div class="content has-text-centered">
+              <img src="static/images/experiments/ablation_audio.png" alt="overall_performance" width="100%" />
+              <p>Impact of audio information.</p>
+            </div>
+            <div class="content has-text-centered">
+              <img src="static/images/experiments/ablation_audio_v.png" alt="overall_performance" width="100%" />
+              <p>Impact of audio information for Video MLLMs.</p>
+            </div>
+            <div class="content has-text-centered">
+              <img src="static/images/experiments/video_frame_curve.png" alt="overall_performance" width="95%" />
+              <p>Impact of video frames.</p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  </section>
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <pre><code>
+        <!-- @article{fu2024video,
+          title={Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis},
+          author={Fu, Chaoyou and Dai, Yuhan and Luo, Yondong and Li, Lei and Ren, Shuhuai and Zhang, Renrui and Wang, Zihan and Zhou, Chenyu and Shen, Yunhang and Zhang, Mengdan and others},
+          journal={arXiv preprint arXiv:2405.21075},
+          year={2024}
+        } -->
+      </code></pre>
+    </div>
+  </section>
+
+
+  <!-- <section class="section">
+    <div class="container" style="width: 60%;">
+      <style>
+        pre {
+          background-color: #f4f4f4;
+          padding: 5px;
+          /* 调整padding为5px */
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          overflow-x: auto;
+          /* 允许水平滚动 */
+        }
+
+        code {
+          font-family: Consolas, "Courier New", monospace;
+          color: #d63384;
+          /* 代码文本颜色 */
+        }
+      </style>
+
+
+    </div>
+  </section> -->
+
+
+  <footer class="footer">
+    <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align: center;">
+            This website is adapted from <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a
+              rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+  </footer>
+
+</body>
+
+</html>
