@@ -17,7 +17,7 @@ Jack Hong<sup>1</sup>, [Shilin Yan](https://scholar.google.com/citations?user=2V
 
 </div>
 
----
+
 
 ## 🔥 News
 * **`2025.02.07`** 🌟 We release WorldSense, the first benchmark for real-world omnimodal understanding of MLLMs.
