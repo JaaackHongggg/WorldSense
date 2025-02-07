@@ -1,10 +1,21 @@
-# WorldSense: Evaluating Real-world Omnimodal Understanding for Multimodal LLMs
+<div align="center">
+<br>
+<h2>WorldSense: Evaluating Real-world Omnimodal Understanding for Multimodal LLMs</h3>
 
+Jack Hong<sup>1</sup>, [Shilin Yan](https://scholar.google.com/citations?user=2VhjOykAAAAJ&hl=zh-CN&oi=ao)<sup>1†</sup>, Jiayin Cai<sup>1</sup>, [Xiaolong Jiang](https://scholar.google.com/citations?user=G0Ow8j8AAAAJ&hl=zh-CN&oi=ao)<sup>1</sup>, [Yao Hu](https://scholar.google.com/citations?user=LIu7k7wAAAAJ&hl=en)<sup>1</sup>, [Weidi Xie](https://scholar.google.com/citations?user=Vtrqj4gAAAAJ&hl=en)<sup>2‡</sup>
+
+<div class="is-size-6 publication-authors">
+  <p class="footnote">
+    <span class="footnote-symbol"><sup>†</sup></span>Project Leader
+    <span class="footnote-symbol"><sup>‡</sup></span>Corresponding Author
+  </p>
+</div>
+
+<sup>1</sup>Xiaohongshu Inc. <sup>2</sup>Shanghai Jiao Tong University
 
 <font size=7><div align='center' > [[🏠 Project Page](https://jaaackhongggg.github.io/WorldSense/)] [[📖 arXiv Paper](https://arxiv.org/pdf/2502.04326)] [[🔍 Eval Code](https://github.com/open-compass/VLMEvalKit/tree/main)] [[🤗 Dataset](https://huggingface.co/datasets/honglyhly/WorldSense)] [[🏆 Leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard)]  </div></font>
 
-WorldSense is the **first** benchmark to assess the real-world omni-modal understanding with _visual, audio, and text_ input. 🌟
-
+</div>
 
 ---
 
