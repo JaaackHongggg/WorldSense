@@ -1,7 +1,7 @@
 # WorldSense: Evaluating Real-world Omnimodal Understanding for Multimodal LLMs
 
 
-<font size=7><div align='center' > [[🏠 Project Page](https://jaaackhongggg.github.io/WorldSense/)] [[📖 arXiv Paper](https://arxiv.org/pdf/2502.04326)] [[🔍 Eval Code](https://github.com/open-compass/VLMEvalKit/tree/main)] [[🤗 Dataset](https://huggingface.co/datasets/honglyhly/WorldSense)][[🏆 Leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard)]  </div></font>
+<font size=7><div align='center' > [[🏠 Project Page](https://jaaackhongggg.github.io/WorldSense/)] [[📖 arXiv Paper](https://arxiv.org/pdf/2502.04326)] [[🔍 Eval Code](https://github.com/open-compass/VLMEvalKit/tree/main)] [[🤗 Dataset](https://huggingface.co/datasets/honglyhly/WorldSense)] [[🏆 Leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard)]  </div></font>
 
 WorldSense is the **first** benchmark to assess the real-world omni-modal understanding with _visual, audio, and text_ input. 🌟
 
