@@ -9,7 +9,7 @@ WorldSense is the **first** benchmark to assess the real-world omni-modal unders
 ---
 
 ## 🔥 News
-* **`2024.06.03`** 🌟 We release Video-MME, the first benchmark for real-world omnimodal understanding of MLLMs.
+* **`2025.02.07`** 🌟 We release WorldSense, the first benchmark for real-world omnimodal understanding of MLLMs.
 
 
 
