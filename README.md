@@ -1,6 +1,6 @@
 <div align="center">
 <br>
-<h2>WorldSense: Evaluating Real-world Omnimodal Understanding for Multimodal LLMs</h2>
+<h1>WorldSense: Evaluating Real-world Omnimodal Understanding for Multimodal LLMs</h1>
 
 Jack Hong<sup>1</sup>, [Shilin Yan](https://scholar.google.com/citations?user=2VhjOykAAAAJ&hl=zh-CN&oi=ao)<sup>1†</sup>, Jiayin Cai<sup>1</sup>, [Xiaolong Jiang](https://scholar.google.com/citations?user=G0Ow8j8AAAAJ&hl=zh-CN&oi=ao)<sup>1</sup>, [Yao Hu](https://scholar.google.com/citations?user=LIu7k7wAAAAJ&hl=en)<sup>1</sup>, [Weidi Xie](https://scholar.google.com/citations?user=Vtrqj4gAAAAJ&hl=en)<sup>2‡</sup>
 
