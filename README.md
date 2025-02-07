@@ -1,7 +1,7 @@
 # WorldSense: Evaluating Real-world Omnimodal Understanding for Multimodal LLMs
 
 
-<font size=7><div align='center' > [[🏠 Project Page](https://video-mme.github.io/)] [[📖 arXiv Paper](https://arxiv.org/pdf/2405.21075)] [[🤗 Dataset](https://huggingface.co/datasets/honglyhly/WorldSense)][[🏆 Leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard)]  </div></font>
+<font size=7><div align='center' > [[🏠 Project Page](https://jaaackhongggg.github.io/WorldSense/)] [[📖 arXiv Paper](https://arxiv.org/pdf/2502.04326)] [[🤗 Dataset](https://huggingface.co/datasets/honglyhly/WorldSense)][[🏆 Leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard)]  </div></font>
 
 WorldSense is the **first** benchmark to assess the real-world omni-modal understanding with _visual, audio, and text_ input. 🌟
 
@@ -102,4 +102,13 @@ If you want to add your model to our [leaderboard](https://jaaackhongggg.github.
 If you find WorldSense helpful for your research, please consider citing our work. Thanks!
 
 ```bibtex
+@article{hong2025worldsenseevaluatingrealworldomnimodal,
+    title={WorldSense: Evaluating Real-world Omnimodal Understanding for Multimodal LLMs},
+    author={Jack Hong and Shilin Yan and Jiayin Cai and Xiaolong Jiang and Yao Hu and Weidi Xie},
+    year={2025},
+    eprint={2502.04326},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2502.04326}, 
+}
 ```
