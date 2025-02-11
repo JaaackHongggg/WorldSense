@@ -13,7 +13,9 @@ Jack Hong<sup>1</sup>, [Shilin Yan](https://scholar.google.com/citations?user=2V
 
 <sup>1</sup>Xiaohongshu Inc. <sup>2</sup>Shanghai Jiao Tong University
 
-<font size=7><div align='center' > [[🏠 Project Page](https://jaaackhongggg.github.io/WorldSense/)] [[📖 arXiv Paper](https://arxiv.org/pdf/2502.04326)] [[🔍 Eval Code](https://github.com/open-compass/VLMEvalKit/tree/main)] [[🤗 Dataset](https://huggingface.co/datasets/honglyhly/WorldSense)] [[🏆 Leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard)]  </div></font>
+<font size=7><div align='center' > [[🏠 Project Page](https://jaaackhongggg.github.io/WorldSense/)] [[📖 arXiv Paper](https://arxiv.org/pdf/2502.04326)] [[🤗 Dataset](https://huggingface.co/datasets/honglyhly/WorldSense)] [[🏆 Leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard)]  </div></font>
+
+<!-- [[🔍 Eval Code](https://github.com/open-compass/VLMEvalKit/tree/main)] -->
 
 </div>
 
@@ -56,7 +58,7 @@ Please download our WorldSense from [here](https://huggingface.co/datasets/hongl
 
 ## 🔮 Evaluation Pipeline
 📍 **Evaluation**: 
-Thanks for [VLMEvalkit](https://github.com/open-compass/VLMEvalKit), we can perform the evaluation of current MLLMs on WorldSense easily. Please refer to [VLMEvalkit](https://github.com/open-compass/VLMEvalKit) for details.
+Thanks for the reproduction of our evaluation through [VLMEvalkit](https://github.com/open-compass/VLMEvalKit). Please refer to [VLMEvalkit](https://github.com/open-compass/VLMEvalKit) for details.
 
 
 📍 **Leaderboard**: 
