@@ -63,7 +63,7 @@ Thanks for the reproduction of our evaluation through [VLMEvalkit](https://githu
 
 📍 **Leaderboard**: 
 
-If you want to add your model to our [leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard), please contact **jaaackhong@gmail.com**.
+If you want to add your model to our [leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard), please contact **jaaackhong@gmail.com** and **tattoo.ysl@gmail.com**.
 
 
 ## 📈 Experimental Results
