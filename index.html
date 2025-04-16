@@ -88,7 +88,7 @@
               <img src="static/images/worldsense.png" style="width:1.6em;vertical-align: middle" alt="Logo" />
               <span class="worldsense" style="vertical-align: middle">WorldSense</span>
             </h1>
-            <h2 class="subtitle is-3 publication-subtitle", style="margin-bottom: 20px;">
+            <h2 class="subtitle is-3 publication-subtitle" , style="margin-bottom: 20px;">
               Evaluating Real-world Omnimodal Understanding <br> for Multimodal LLMs
             </h2>
 
@@ -96,12 +96,14 @@
               <span class="author-block">
                 Jack Hong<sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=2VhjOykAAAAJ&hl=zh-CN&oi=ao">Shilin Yan</a><sup>1†</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=2VhjOykAAAAJ&hl=zh-CN&oi=ao">Shilin
+                  Yan</a><sup>1†</sup>,</span>
               <span class="author-block">
                 Jiayin Cai<sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=G0Ow8j8AAAAJ&hl=zh-CN&oi=ao">Xiaolong Jiang</a><sup>1</sup>,
+                <a href="https://scholar.google.com/citations?user=G0Ow8j8AAAAJ&hl=zh-CN&oi=ao">Xiaolong
+                  Jiang</a><sup>1</sup>,
               </span>
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=LIu7k7wAAAAJ&hl=en">Yao Hu</a><sup>1</sup>,
@@ -144,7 +146,8 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/JaaackHongggg/WorldSense" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/JaaackHongggg/WorldSense"
+                    class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -174,8 +177,7 @@
                 </span>
                 <!-- Leaderboard Link. -->
                 <span class="link-block">
-                  <a href="#leaderboard"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <p style="font-size:18px">🏆</p>
                     </span>
@@ -201,19 +203,21 @@
           <h2 class="title is-3">Introduction</h2>
           <img src="static/images/sample.png" alt="data-sample" style="max-width: 100%;" />
           <div class="content has-text-justified">
-            We introduce <b>WorldSense</b>, the <i>first</i> benchmark to assess the multi-modal video understanding, that 
-            simultaneously encompasses <i>visual, audio, and text</i> inputs. 
-            In contrast to existing benchmarks, our <b>WorldSense</b> has several features: (i) <b>collaboration of omni-modality</b>, 
-            we design the evaluation tasks to feature a strong coupling of audio and video, requiring models 
-            to effectively utilize the synergistic perception of omni-modality; 
-            (ii) <b>diversity of videos and tasks</b>, WorldSense encompasses a diverse collection of 1,662 
-            audio-visual synchronised videos, systematically categorized into 8 primary domains and 67 fine-grained 
-            subcategories to cover the broad scenarios, and 3,172 multi-choice QA pairs across 26 distinct tasks to 
-            enable the comprehensive evaluation; (iii) <b>high-quality annotations</b>, all the QA pairs are manually 
-            labeled by 80 expert annotators with multiple rounds of correction to ensure quality. 
-            Based on our <b>WorldSense</b>, we extensively evaluate various state-of-the-art models. 
-            The experimental results indicate that existing models face significant challenges in understanding 
-            real-world scenarios (48.0% best accuracy). We hope our <b>WorldSense</b> can provide a platform for 
+            We introduce <b>WorldSense</b>, the <i>first</i> benchmark to assess the multi-modal video understanding,
+            that
+            simultaneously encompasses <i>visual, audio, and text</i> inputs.
+            In contrast to existing benchmarks, our <b>WorldSense</b> has several features: (i) <b>collaboration of
+              omni-modality</b>,
+            we design the evaluation tasks to feature a strong coupling of audio and video, requiring models
+            to effectively utilize the synergistic perception of omni-modality;
+            (ii) <b>diversity of videos and tasks</b>, WorldSense encompasses a diverse collection of 1,662
+            audio-visual synchronised videos, systematically categorized into 8 primary domains and 67 fine-grained
+            subcategories to cover the broad scenarios, and 3,172 multi-choice QA pairs across 26 distinct tasks to
+            enable the comprehensive evaluation; (iii) <b>high-quality annotations</b>, all the QA pairs are manually
+            labeled by 80 expert annotators with multiple rounds of correction to ensure quality.
+            Based on our <b>WorldSense</b>, we extensively evaluate various state-of-the-art models.
+            The experimental results indicate that existing models face significant challenges in understanding
+            real-world scenarios (48.0% best accuracy). We hope our <b>WorldSense</b> can provide a platform for
             evaluating the ability in constructing and understanding coherent contexts from omni-modality.
           </div>
         </div>
@@ -316,15 +320,15 @@
                   <td style="vertical-align: middle;">46.8</td>
                   <td style="vertical-align: middle;">40.2</td>
                   <td style="vertical-align: middle;">42.0</td>
-                  <td style="vertical-align: middle;"><b class="">48.0</b</td>
+                  <td style="vertical-align: middle;"><b class="">48.0</b< /td>
                 </tr>
 
                 <tr>
                   <td style="vertical-align: middle;"></td>
                   <td style="text-align: left; padding: 2px 10px;">
                     <b class="">
-                      <a href="https://qwenlm.github.io/blog/qwen2.5-omni/"
-                        class="ext-link" style="font-size: 16px; margin-left: 5px;">Qwen 2.5 Omni</a>
+                      <a href="https://qwenlm.github.io/blog/qwen2.5-omni/" class="ext-link"
+                        style="font-size: 16px; margin-left: 5px;">Qwen 2.5 Omni</a>
                       <p style="font-size: 12px; margin-left: 5px; color: #858383;">Alibaba</p>
                     </b>
                   </td>
@@ -338,7 +342,7 @@
                   <td style="vertical-align: middle;">39.1</td>
                   <td style="vertical-align: middle;">43.5</td>
                   <td style="vertical-align: middle;">47.3</td>
-                  <td style="vertical-align: middle;"><b class="">45.4</b</td>
+                  <td style="vertical-align: middle;"><b class="">45.4</b< /td>
                 </tr>
 
                 <tr>
@@ -526,7 +530,7 @@
                   <td style="vertical-align: middle;">38.5</td>
                   <td style="vertical-align: middle;"><b class="">32.4</b></td>
                 </tr>
-                
+
                 <tr>
                   <td style="vertical-align: middle;"></td>
                   <td style="text-align: left; padding: 2px 10px;"><b class=""><a
@@ -676,9 +680,11 @@
           </div>
 
           <p class="mt-3">
-          If you want to add your model to our leaderboard, please contact <a href="mailto:jaaackhong@gmail.com">jaaackhong@gmail.com</a> and <a href="mailto:tattoo.ysl@gmail.com">tattoo.ysl@gmail.com</a>.
+            If you want to add your model to our leaderboard, please contact <a
+              href="mailto:jaaackhong@gmail.com">jaaackhong@gmail.com</a> and <a
+              href="mailto:tattoo.ysl@gmail.com">tattoo.ysl@gmail.com</a>.
 
-          
+
 
           </p>
 
@@ -704,7 +710,8 @@
         <div class="column is-four-fifths" style="width: 100%;">
           <h2 class="title is-3">Overview </h2>
           <div class="content has-text-justified">
-            <p style="text-align: center; margin-bottom: -5px;" , class="mt-3">Our WorldSense have the following three main features:
+            <p style="text-align: center; margin-bottom: -5px;" , class="mt-3">Our WorldSense have the following three
+              main features:
             </p>
             <p style="text-align: center; margin-bottom: 30px; font-weight: bold;" , class="mt-3">
               (1) Collaboration of Omni-Modality, (2) Diversity of Videos and Tasks, (3) High-Quality Annotations.
@@ -718,7 +725,8 @@
               <img src="static/images/distribution.png" style="width: 70%;" />
               <p style="margin-bottom: 0px;">Distribution of WorldSense.
               </p>
-              <p>(a) Video category hierarchy. (b) Task distribution. (c) Acoustic signals distribution. (d) Video duration distribution. </p>
+              <p>(a) Video category hierarchy. (b) Task distribution. (c) Acoustic signals distribution. (d) Video
+                duration distribution. </p>
 
             </div>
 
@@ -757,7 +765,7 @@
         <div class="content has-text-centered">
           <img src="static/images/static.png" style="width: 60%;" />
           <p style="margin-bottom: 0px;">Static comparison with other benchmarks.</p>
-          
+
 
         </div>
       </div>
