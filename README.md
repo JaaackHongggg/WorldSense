@@ -21,9 +21,10 @@ Jack Hong<sup>1</sup>, [Shilin Yan](https://scholar.google.com/citations?user=2V
 
 
 
-## 🔥 News
-* **`2025.02.07`** 🌟 We have added the results of [VITA](https://arxiv.org/pdf/2501.01957) and [Qwen2.5 Omni](https://qwenlm.github.io/blog/qwen2.5-omni/) to [Leardboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard).
-* **`2025.02.07`** 🌟 We release WorldSense, the first benchmark for real-world omnimodal understanding of MLLMs.
+##  🚀  News
+1. [2025-04-18] [VITA](https://arxiv.org/pdf/2501.01957) and [Qwen2.5 Omni](https://qwenlm.github.io/blog/qwen2.5-omni/) are added to [Leardboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard).
+2. [2025-02-07] We release WorldSense, the first benchmark for real-world omnimodal understanding of MLLMs. 
+
 
 
 
