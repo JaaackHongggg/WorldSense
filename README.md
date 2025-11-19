@@ -19,6 +19,10 @@ Jack Hong<sup>1</sup>, [Shilin Yan](https://scholar.google.com/citations?user=2V
 
 </div>
 
+## 📍 Leaderboard
+
+We welcome researchers and developers from the community to submit their models for evaluation and inclusion on the WorldSense [leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard).
+To streamline the process, please send an email to **jaaackhong@gmail.com** and CC **tattoo.ysl@gmail.com**.
 
 
 ##  🚀  News
@@ -63,10 +67,6 @@ Please download our WorldSense from [here](https://huggingface.co/datasets/hongl
 📍 **Evaluation**: 
 Thanks for the reproduction of our evaluation through [VLMEvalkit](https://github.com/open-compass/VLMEvalKit). Please refer to [VLMEvalkit](https://github.com/open-compass/VLMEvalKit) for details.
 
-
-📍 **Leaderboard**: 
-
-If you want to add your model to our [leaderboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard), please contact **jaaackhong@gmail.com** and **tattoo.ysl@gmail.com**.
 
 
 ## 📈 Experimental Results
