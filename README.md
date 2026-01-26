@@ -26,7 +26,7 @@ To streamline the process, please send an email to **jaaackhong@gmail.com** and 
 
 
 ##  🚀  News
-1. [2026-01-26]🎉🎉🎉 WorldSense is accepted by ICLR 2026.
+1. [2026-01-26] 🎉🎉🎉 WorldSense is accepted by ICLR 2026.
 1. [2025-09-09] [Gemini-2.5-Pro](https://deepmind.google/models/gemini/pro/) and [Gemini-2.5-Flash](https://deepmind.google/models/gemini/flash/) are added to [Leardboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard). Gemini-2.5-Pro achieves a top score of **65.1**!
 2. [2025-04-18] [VITA-1.5](https://arxiv.org/pdf/2501.01957) and [Qwen2.5 Omni](https://qwenlm.github.io/blog/qwen2.5-omni/) are added to [Leardboard](https://jaaackhongggg.github.io/WorldSense/#leaderboard).
 3. [2025-02-07] We release [WorldSense](https://huggingface.co/datasets/honglyhly/WorldSense), the first benchmark for real-world omnimodal understanding of MLLMs. 
