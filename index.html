@@ -43,6 +43,229 @@
       background-image: none !important;
       /* Remove the sort arrow */
     }
+
+    .leaderboard-filters {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .leaderboard-filters .filter-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .leaderboard-filters label {
+      font-weight: 600;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .leaderboard-filters .select select {
+      font-size: 15px;
+      min-height: 2.5em;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+    }
+
+    .filter-note {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .filter-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      color: #444;
+      background: #f7f9fc;
+      border: 1px solid #d6e5ff;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin: 0;
+    }
+
+    .filter-status .icon {
+      color: #4f8cff;
+      font-size: 14px;
+    }
+
+    .leaderboard-chart-wrap {
+      width: 100%;
+      max-width: 100%;
+      margin: 8px auto 24px;
+      padding: 14px 16px;
+      border: 1px solid #e7e7e7;
+      border-radius: 10px;
+      background: #fff;
+      box-sizing: border-box;
+    }
+
+    .leaderboard-chart-title {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+
+    .leaderboard-chart-subtitle {
+      font-size: 13px;
+      color: #666;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    .leaderboard-legend {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 8px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .leaderboard-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .leaderboard-legend-swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .leaderboard-legend-swatch.open-weights {
+      background: #4f8cff;
+    }
+
+    .leaderboard-legend-swatch.proprietary {
+      background: #1f1f1f;
+    }
+
+    .leaderboard-chart {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: var(--bar-gap, 6px);
+      align-items: end;
+      padding: 24px 12px 2px;
+      overflow-x: hidden;
+      overflow-y: visible;
+    }
+
+    .leaderboard-chart.is-dense {
+      justify-content: flex-start;
+    }
+
+    .leaderboard-bar-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      width: 52px;
+      flex: 0 0 52px;
+      min-width: 0;
+    }
+
+    .leaderboard-chart.is-dense .leaderboard-bar-row {
+      width: auto;
+      flex: 1 1 0;
+      min-width: 24px;
+    }
+
+    .leaderboard-bar-label {
+      font-size: 11px;
+      text-align: center;
+      color: #222;
+      width: 100%;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      line-height: 1.2;
+      min-height: 28px;
+    }
+
+    .leaderboard-bar-track {
+      width: 24px;
+      height: 190px;
+      background: transparent;
+      border-radius: 4px;
+      overflow: visible;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+    }
+
+    .leaderboard-chart.is-dense .leaderboard-bar-track {
+      width: clamp(14px, 68%, 24px);
+    }
+
+    .leaderboard-bar-fill {
+      width: 100%;
+      background: linear-gradient(90deg, #4f8cff 0%, #6bb7ff 100%);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .leaderboard-bar-fill.proprietary {
+      background: #1f1f1f;
+    }
+
+    .leaderboard-bar-fill.open-weights {
+      background: linear-gradient(90deg, #4f8cff 0%, #6bb7ff 100%);
+    }
+
+    .leaderboard-bar-score {
+      font-size: 12px;
+      font-weight: 600;
+      color: #1f1f1f;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -18px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .leaderboard-chart-empty {
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+      padding: 8px 0;
+    }
+
+    @media (max-width: 768px) {
+      .leaderboard-bar-row {
+        width: 44px;
+        flex: 0 0 44px;
+      }
+
+      .leaderboard-bar-track {
+        height: 165px;
+        width: 20px;
+      }
+
+      .leaderboard-chart.is-dense .leaderboard-bar-row {
+        min-width: 20px;
+      }
+
+      .leaderboard-chart.is-dense .leaderboard-bar-track {
+        width: clamp(12px, 65%, 20px);
+      }
+    }
   </style>
 
 </head>
@@ -228,14 +451,230 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      setupLeaderboardFilters();
       updateRowNumbers();
+      renderLeaderboardChart();
       document.querySelector("#results").addEventListener("click", updateRowNumbers);
+      window.addEventListener("resize", renderLeaderboardChart);
     });
+
+    function setupLeaderboardFilters() {
+      const table = document.querySelector("#results");
+      const rows = Array.from(table.querySelectorAll("tbody tr"));
+      const llmSizeFilter = document.querySelector("#llm-size-filter");
+      const modalityFilter = document.querySelector("#modality-filter");
+
+      populateLlmSizeFilterOptions(llmSizeFilter);
+      populateFilterOptions(modalityFilter, rows, 3);
+      updateFilterStatusText();
+
+      llmSizeFilter.addEventListener("change", applyLeaderboardFilters);
+      modalityFilter.addEventListener("change", applyLeaderboardFilters);
+    }
+
+    function updateFilterStatusText() {
+      const llmSizeFilter = document.querySelector("#llm-size-filter");
+      const modalityFilter = document.querySelector("#modality-filter");
+      const statusText = document.querySelector("#filter-status-text");
+
+      const llmSizeLabel = llmSizeFilter.value === "all"
+        ? "All model types"
+        : llmSizeFilter.options[llmSizeFilter.selectedIndex].text;
+
+      const modalityLabel = modalityFilter.value === "all"
+        ? "All modalities"
+        : modalityFilter.options[modalityFilter.selectedIndex].text;
+
+      statusText.textContent = `Filtered by`;
+    }
+
+    function populateFilterOptions(selectElement, rows, columnIndex) {
+      const values = Array.from(
+        new Set(
+          rows.map((row) => row.children[columnIndex].innerText.trim())
+        )
+      ).sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }));
+
+      values.forEach((value) => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = value;
+        selectElement.appendChild(option);
+      });
+    }
+
+    function populateLlmSizeFilterOptions(selectElement) {
+      const options = [
+        { value: "open-weights", text: "Open Weights" },
+        { value: "proprietary", text: "Proprietary" }
+      ];
+
+      options.forEach((item) => {
+        const option = document.createElement("option");
+        option.value = item.value;
+        option.textContent = item.text;
+        selectElement.appendChild(option);
+      });
+    }
+
+    function getLlmSizeCategory(llmSizeText) {
+      const normalized = llmSizeText.trim();
+
+      if (normalized === "-") {
+        return "proprietary";
+      }
+
+      const matched = normalized.match(/([\d.]+)\s*[bB]/);
+      if (!matched) {
+        return "proprietary";
+      }
+
+      const sizeValue = parseFloat(matched[1]);
+      if (Number.isNaN(sizeValue)) {
+        return "proprietary";
+      }
+
+      return "open-weights";
+    }
+
+    function applyLeaderboardFilters() {
+      const table = document.querySelector("#results");
+      const rows = Array.from(table.querySelectorAll("tbody tr"));
+      const selectedLlmSize = document.querySelector("#llm-size-filter").value;
+      const selectedModality = document.querySelector("#modality-filter").value;
+
+      rows.forEach((row) => {
+        const llmSize = row.children[2].innerText.trim();
+        const modality = row.children[3].innerText.trim();
+        const llmSizeCategory = getLlmSizeCategory(llmSize);
+
+        const matchLlmSize = selectedLlmSize === "all" || llmSizeCategory === selectedLlmSize;
+        const matchModality = selectedModality === "all" || modality === selectedModality;
+
+        row.style.display = matchLlmSize && matchModality ? "" : "none";
+      });
+
+      updateFilterStatusText();
+      updateRowNumbers();
+      renderLeaderboardChart();
+    }
+
+    function getModelNameFromRow(row) {
+      const modelCell = row.children[1];
+      const anchor = modelCell.querySelector("a");
+      if (!anchor) {
+        return modelCell.innerText.trim();
+      }
+
+      const textNode = Array.from(anchor.childNodes).find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+      if (textNode) {
+        return textNode.textContent.trim();
+      }
+
+      return anchor.innerText.trim().split("\n")[0].trim();
+    }
+
+    function renderLeaderboardChart() {
+      const chartContainer = document.querySelector("#leaderboard-bar-chart");
+      const rows = Array.from(document.querySelectorAll("#results tbody tr"))
+        .filter((row) => row.style.display !== "none")
+        .map((row) => {
+          const scoreText = row.children[12].innerText.trim();
+          const score = parseFloat(scoreText);
+          const llmSize = row.children[2].innerText.trim();
+          return {
+            model: getModelNameFromRow(row),
+            score: Number.isNaN(score) ? 0 : score,
+            category: getLlmSizeCategory(llmSize)
+          };
+        })
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 20);
+
+      if (!rows.length) {
+        chartContainer.innerHTML = '<div class="leaderboard-chart-empty">No models match current filters.</div>';
+        return;
+      }
+
+      updateChartLayoutVars(chartContainer, rows.length);
+
+      const maxScore = Math.max(...rows.map((item) => item.score), 1);
+      chartContainer.innerHTML = rows.map((item) => {
+        const height = (item.score / maxScore) * 100;
+        const safeModelName = escapeHtml(item.model);
+        const fillClass = item.category === "proprietary" ? "proprietary" : "open-weights";
+        return `
+          <div class="leaderboard-bar-row">
+            <div class="leaderboard-bar-track">
+              <div class="leaderboard-bar-fill ${fillClass}" style="height: ${height.toFixed(2)}%;">
+                <div class="leaderboard-bar-score">${item.score.toFixed(1)}</div>
+              </div>
+            </div>
+            <div class="leaderboard-bar-label" title="${safeModelName}">${safeModelName}</div>
+          </div>
+        `;
+      }).join("");
+
+      normalizeChartLabelHeights(chartContainer);
+    }
+
+    function normalizeChartLabelHeights(chartContainer) {
+      const labels = Array.from(chartContainer.querySelectorAll(".leaderboard-bar-label"));
+      if (!labels.length) {
+        return;
+      }
+
+      let maxHeight = 0;
+      labels.forEach((label) => {
+        label.style.height = "auto";
+        maxHeight = Math.max(maxHeight, label.scrollHeight);
+      });
+
+      labels.forEach((label) => {
+        label.style.height = `${maxHeight}px`;
+      });
+    }
+
+    function updateChartLayoutVars(chartContainer, itemCount) {
+      const isDense = itemCount >= 12;
+      chartContainer.classList.toggle("is-dense", isDense);
+
+      let gap = 6;
+      if (isDense) {
+        gap = 2;
+      } else if (itemCount <= 5) {
+        gap = 8;
+      } else if (itemCount <= 8) {
+        gap = 6;
+      } else {
+        gap = 4;
+      }
+
+      chartContainer.style.setProperty("--bar-gap", `${gap}px`);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
 
     function updateRowNumbers() {
       const rows = document.querySelectorAll("#results tbody tr");
-      rows.forEach((row, index) => {
-        row.querySelector("td").innerText = index + 1;
+      let visibleIndex = 1;
+
+      rows.forEach((row) => {
+        const indexCell = row.querySelector("td");
+        if (row.style.display === "none") {
+          indexCell.innerText = "";
+          return;
+        }
+
+        indexCell.innerText = visibleIndex;
+        visibleIndex += 1;
       });
     }
   </script>
@@ -252,38 +691,49 @@
               real-world omnimodal understanding.
             </p>
 
+
+            <div class="leaderboard-filters">
+              <div class="filter-status">
+                <span class="icon"><i class="fas fa-filter"></i></span>
+                <span id="filter-status-text">Filtered by: </span>
+              </div>
+              <div class="filter-item">
+                <label for="llm-size-filter">Model Type</label>
+                <div class="select">
+                  <select id="llm-size-filter">
+                    <option value="all">All</option>
+                  </select>
+                </div>
+              </div>
+              <div class="filter-item">
+                <label for="modality-filter">Modality</label>
+                <div class="select">
+                  <select id="modality-filter">
+                    <option value="all">All</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="leaderboard-chart-wrap">
+              <div class="leaderboard-chart-title">WorldSense Leaderboard</div>
+              <!-- <div class="leaderboard-chart-subtitle">Top models by Average score (updates with filters).</div> -->
+              <div class="leaderboard-legend">
+                <span class="leaderboard-legend-item">
+                  <span class="leaderboard-legend-swatch open-weights"></span>
+                  <span>Open Weights</span>
+                </span>
+                <span class="leaderboard-legend-item">
+                  <span class="leaderboard-legend-swatch proprietary"></span>
+                  <span>Proprietary</span>
+                </span>
+              </div>
+              <div id="leaderboard-bar-chart" class="leaderboard-chart"></div>
+            </div>
+
             <table class="js-sort-table" id="results" style="margin-left: auto; margin-right: auto;">
               <thead>
                 <tr>
-                  <!-- <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px;"
-                    data-js-sort-colNum="none"><strong>#</strong></th>
-                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 180px;"
-                    data-js-sort-colNum="none"><strong>Model</strong></th>
-                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px;"
-                    data-js-sort-colNum="none"><strong>LLM <br>Params</strong></th>
-                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 100px;"
-                    data-js-sort-colNum="none"><strong>Frames</strong></th>
-                  <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 110px;"
-                    data-js-sort-colNum="none"><strong>Date</strong></th>
-                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="6"><strong>Overall
-                      (%)</strong></th>
-                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="8"><strong>Short
-                      Video (%)</strong></th>
-                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="10"><strong>Medium
-                      Video (%)</strong></th>
-                  <th colspan="2" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="12"><strong>Long
-                      Video (%)</strong></th>
-                </tr>
-                <tr>
-                  <th data-js-sort-colNum="5"><strong>w/o subs</strong></th>
-                  <th data-js-sort-colNum="6"><strong>w subs</strong></th>
-                  <th data-js-sort-colNum="7"><strong>w/o subs</strong></th>
-                  <th data-js-sort-colNum="8"><strong>w subs</strong></th>
-                  <th data-js-sort-colNum="9"><strong>w/o subs</strong></th>
-                  <th data-js-sort-colNum="10"><strong>w subs</strong></th>
-                  <th data-js-sort-colNum="11"><strong>w/o subs</strong></th>
-                  <th data-js-sort-colNum="12"><strong>w subs</strong></th> -->
-
                   <th class="js-sort-string"><strong>#</strong></th>
                   <th class="js-sort-string"><strong>Model</strong></th>
                   <th class="js-sort-string"><strong>LLM Size</strong></th>
