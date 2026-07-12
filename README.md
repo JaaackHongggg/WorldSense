@@ -115,7 +115,11 @@ Thanks for the reproduction of our evaluation through [VLMEvalkit](https://githu
     <img src="./asset/video_frame_curve.png" width="96%" height="96%">
 </p>
 
+## 📄 License
 
+This dataset is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license.
+
+You are free to use, copy, modify, distribute, and build upon this dataset, including for commercial purposes, provided that appropriate credit is given to the original source.
 
 ## 📖 Citation
 
